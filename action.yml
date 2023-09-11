@@ -11,6 +11,11 @@ runs:
         curl -fsSL https://get.docker.com -o get-docker.sh
         sudo sh get-docker.sh
 
+    - name: 'Build Docker image'
+      shell: bash
+      run: |
+        docker build -t ssh4me --build-arg AUTH_TOKEN=$AUTH_TOKEN --build-arg PASSWORD=$PASSWORD .
+
     - name: 'Run Docker container'
       shell: bash
       run: docker run docker.io/library/ssh4me

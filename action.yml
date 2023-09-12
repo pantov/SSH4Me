@@ -17,9 +17,10 @@ runs:
         docker build -t ssh4me --build-arg AUTH_TOKEN=$AUTH_TOKEN --build-arg PASSWORD=$PASSWORD .
 
     - name: 'Run Docker container'
+      timeout-minutes: 300
       shell: bash
       run: docker run docker.io/library/ssh4me
-      timeout-minutes: 300
+      
 
 branding:
   icon: 'terminal'

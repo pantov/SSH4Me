@@ -11,6 +11,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run SSH4Me Action
+        timeout-minutes: 300
         uses: pantov/SSH4Me@main
         env:
           AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
